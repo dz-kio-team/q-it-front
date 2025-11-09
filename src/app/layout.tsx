@@ -1,6 +1,7 @@
-import { Theme } from '@radix-ui/themes';
+import { GNB } from '@/widgets/gnb';
 
 import type { Metadata } from 'next';
+
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -16,7 +17,8 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <Theme>{children}</Theme>
+        <GNB />
+        {children}
       </body>
     </html>
   );

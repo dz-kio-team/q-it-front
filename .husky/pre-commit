@@ -1,0 +1,19 @@
+#!/bin/sh
+
+echo "🔍 Running pre-commit checks..."
+
+# Run all checks
+npm run check-all
+if [ $? -ne 0 ]; then
+  echo "❌ Code quality checks failed. Please fix the issues before committing."
+  exit 1
+fi
+
+# Run tests
+npm run test -- --run
+if [ $? -ne 0 ]; then
+  echo "❌ Tests failed. Please fix the tests before committing."
+  exit 1
+fi
+
+echo "✅ All checks passed! Proceeding with commit..."
